@@ -1,0 +1,61 @@
+.pedido-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin: 16px 0;
+  padding: 18px 24px;
+  transition: box-shadow 0.2s;
+}
+.pedido-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.titulo-pedido {
+  color: #1976d2;
+  margin-bottom: 8px;
+}
+.dato-cliente, .dato-fecha {
+  margin: 2px 0;
+  font-size: 1rem;
+}
+.estado-pedido {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  margin-top: 4px;
+}
+.estado-pending {
+  background: #ffe082;
+  color: #7c6f00;
+}
+.estado-shipped {
+  background: #81d4fa;
+  color: #01579b;
+}
+.estado-delivered {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+.lista-productos {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.producto-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.98rem;
+}
+.nombre-producto {
+  font-weight: 500;
+}
+.cantidad-producto {
+  color: #1976d2;
+}
+.precio-producto {
+  color: #388e3c;
+  font-weight: 500;
+}

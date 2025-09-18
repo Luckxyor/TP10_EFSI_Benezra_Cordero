@@ -1,0 +1,7 @@
+.lista-pedidos {
+  margin: 24px 0;
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

@@ -1,0 +1,83 @@
+.formulario-pedido {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 20px 28px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.titulo-formulario {
+  color: #1976d2;
+  margin-bottom: 10px;
+}
+.input-cliente, .input-producto, .input-cantidad, .input-precio {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+.select-estado {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #bdbdbd;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+.btn-agregar-producto {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.productos-nuevos input {
+  min-width: 0;
+  flex: 1 1 120px;
+}
+
+.btn-agregar-producto {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  margin-left: 0;
+}
+.btn-agregar-producto:hover {
+  background: #1565c0;
+}
+.btn-agregar-producto:hover {
+  background: #1565c0;
+}
+.lista-productos-nuevos {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 8px;
+}
+.btn-crear-pedido {
+  background: #388e3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn-crear-pedido:hover {
+  background: #2e7d32;
+}
