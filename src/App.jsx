@@ -9,28 +9,27 @@ import "./App.css";
 const pedidosIniciales = [
   {
     id: 1,
-    customer: "Juan Perez",
+    customer: "Lanús",
     items: [
-      { productId: 101, name: "Remera", quantity: 2, price: 3500 },
-      { productId: 102, name: "Pantalón", quantity: 1, price: 7000 },
+      { productId: 101, name: "Conmebol Sudamericana", quantity: 1, price: 2025 }
     ],
     status: "pending",
     date: new Date("2025-09-15"),
   },
   {
     id: 2,
-    customer: "Ana López",
+    customer: "Boca Juniors",
     items: [
-      { productId: 103, name: "Zapatillas", quantity: 1, price: 12000 },
+      { productId: 103, name: "Conmebol Libertadores", quantity: 6, price: 12000 },
     ],
     status: "shipped",
     date: new Date("2025-09-16"),
   },
   {
     id: 3,
-    customer: "Carlos Gómez",
+    customer: "River Plate",
     items: [
-      { productId: 104, name: "Campera", quantity: 1, price: 15000 },
+      { productId: 104, name: "Descenso a Primera B Nacional", quantity: 1, price: 2011 },
     ],
     status: "delivered",
     date: new Date("2025-09-17"),
@@ -58,7 +57,7 @@ function App() {
 
   return (
     <div className="dashboard-pedidos">
-      <h1>MailAméricas - Gestión de Pedidos</h1>
+      <h1>MailSudamericana - Gestión de Pedidos</h1>
       <OrderStats {...stats} />
       <OrderFilter filter={filtro} onChange={setFiltro} />
       <OrderList orders={pedidosFiltrados} />

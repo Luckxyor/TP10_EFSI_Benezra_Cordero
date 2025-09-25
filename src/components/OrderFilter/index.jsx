@@ -5,7 +5,7 @@ import "./OrderFilter.css";
 function OrderFilter({ filter, onChange }) {
   return (
     <div className="filtro-pedidos">
-      <label htmlFor="estado">Filtrar por estado:</label>
+      <label for="estado">Filtrar por estado:</label>
       <select id="estado" value={filter} onChange={e => onChange(e.target.value)}>
         <option value="">Todos</option>
         <option value="pending">Pendiente</option>

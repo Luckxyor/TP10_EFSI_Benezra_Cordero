@@ -25,6 +25,7 @@ function FormularioPedido({ onAdd }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // Solo validar cliente y que haya productos
     if (cliente.length < 3 || productos.length === 0) return;
     onAdd({
       id: Date.now(),
@@ -36,6 +37,7 @@ function FormularioPedido({ onAdd }) {
     setCliente("");
     setEstado("pending");
     setProductos([]);
+    // No modificar los inputs de producto, así se puede enviar aunque estén vacíos o inválidos
   }
 
   return (
@@ -55,7 +57,7 @@ function FormularioPedido({ onAdd }) {
         <label>Cantidad:</label>
         <input type="number" value={cantidad} min={1} onChange={e => setCantidad(Number(e.target.value))} className="input-cantidad" />
         <label>Precio:</label>
-        <input type="number" value={precio} min={1} onChange={e => setPrecio(Number(e.target.value))} className="input-precio" />
+  <input type="number" value={precio} min={0} onChange={e => setPrecio(Number(e.target.value))} className="input-precio" />
         <button type="button" onClick={agregarProducto} className="btn-agregar-producto">Agregar producto</button>
       </div>
       <ul className="lista-productos-nuevos">
