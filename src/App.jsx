@@ -38,7 +38,7 @@ const pedidosIniciales = [
 
 function App() {
   const [pedidos, setPedidos] = useState(pedidosIniciales);
-  const [filtro, setFiltro] = useState("");
+  const [filtro, setFiltro] = useState(null);
 
   const pedidosFiltrados = filtro
     ? pedidos.filter((p) => p.status === filtro)
@@ -59,7 +59,10 @@ function App() {
     <div className="dashboard-pedidos">
       <h1>MailSudamericana - Gestión de Pedidos</h1>
       <OrderStats {...stats} />
-      <OrderFilter filter={filtro} onChange={setFiltro} />
+      <OrderFilter
+        filter={filtro === null ? undefined : filtro}
+        onChange={(valor) => setFiltro(valor === "" ? null : valor)}
+      />
       <OrderList orders={pedidosFiltrados} />
       <FormularioPedido onAdd={agregarPedido} />
     </div>

@@ -43,6 +43,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  background-color: rgba(22, 69, 196, 0.3);
+  border: 1px solid rgba(22, 69, 196, 0.8);
+  border-radius: 15px;
 }
 
 .productos-nuevos input {
@@ -66,9 +70,6 @@
   white-space: nowrap;
   margin-left: 0;
   width: 30%;
-}
-.btn-agregar-producto:hover {
-  background: #1565c0;
 }
 .btn-agregar-producto:hover {
   background: #1565c0;

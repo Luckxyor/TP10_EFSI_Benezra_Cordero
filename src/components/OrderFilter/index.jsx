@@ -5,8 +5,12 @@ import "./OrderFilter.css";
 function OrderFilter({ filter, onChange }) {
   return (
     <div className="filtro-pedidos">
-      <label for="estado">Filtrar por estado:</label>
-      <select id="estado" value={filter} onChange={e => onChange(e.target.value)}>
+      <label htmlFor="estado">Filtrar por estado:</label>
+      <select
+        id="estado"
+        value={filter ?? ""}
+        onChange={(e) => onChange(e.target.value)}
+      >
         <option value="">Todos</option>
         <option value="pending">Pendiente</option>
         <option value="shipped">Enviado</option>
@@ -17,7 +21,7 @@ function OrderFilter({ filter, onChange }) {
 }
 
 OrderFilter.propTypes = {
-  filter: PropTypes.oneOf(["", "pending", "shipped", "delivered"]),
+  filter: PropTypes.oneOf(["pending", "shipped", "delivered"]),
   onChange: PropTypes.func.isRequired,
 };
 
