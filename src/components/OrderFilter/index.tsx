@@ -1,8 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./OrderFilter.css";
 
-function OrderFilter({ filter, onChange }) {
+interface OrderFilterProps {
+  filter?: "pending" | "shipped" | "delivered";
+  onChange: (value: string) => void;
+}
+
+function OrderFilter({ filter, onChange }: OrderFilterProps): React.JSX.Element {
   return (
     <div className="filtro-pedidos">
       <label htmlFor="estado">Filtrar por estado:</label>
@@ -19,10 +23,5 @@ function OrderFilter({ filter, onChange }) {
     </div>
   );
 }
-
-OrderFilter.propTypes = {
-  filter: PropTypes.oneOf(["pending", "shipped", "delivered"]),
-  onChange: PropTypes.func.isRequired,
-};
 
 export default OrderFilter;

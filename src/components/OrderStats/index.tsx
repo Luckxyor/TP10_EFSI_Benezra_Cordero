@@ -1,8 +1,14 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "./OrderStats.css";
 
-function OrderStats({ total, pending, shipped, delivered }) {
+interface OrderStatsProps {
+  total: number;
+  pending: number;
+  shipped: number;
+  delivered: number;
+}
+
+function OrderStats({ total, pending, shipped, delivered }: OrderStatsProps): React.JSX.Element {
   return (
     <div className="estadisticas-pedidos">
       <h4 className="titulo-estadisticas">Estadísticas Generales</h4>
@@ -15,12 +21,5 @@ function OrderStats({ total, pending, shipped, delivered }) {
     </div>
   );
 }
-
-OrderStats.propTypes = {
-  total: PropTypes.number.isRequired,
-  pending: PropTypes.number.isRequired,
-  shipped: PropTypes.number.isRequired,
-  delivered: PropTypes.number.isRequired,
-};
 
 export default OrderStats;

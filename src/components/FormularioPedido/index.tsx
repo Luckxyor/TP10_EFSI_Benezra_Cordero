@@ -1,16 +1,34 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import "./FormularioPedido.css";
 
-function FormularioPedido({ onAdd }) {
-  const [cliente, setCliente] = useState("");
-  const [estado, setEstado] = useState("pending");
-  const [productos, setProductos] = useState([]);
-  const [nombreProducto, setNombreProducto] = useState("");
-  const [cantidad, setCantidad] = useState(1);
-  const [precio, setPrecio] = useState(0);
+interface Item {
+  productId: number;
+  name: string;
+  quantity: number;
+  price: number;
+}
 
-  function agregarProducto() {
+interface Pedido {
+  id: number;
+  customer: string;
+  items: Item[];
+  status: "pending" | "shipped" | "delivered";
+  date: Date;
+}
+
+interface FormularioPedidoProps {
+  onAdd: (pedido: Pedido) => void;
+}
+
+function FormularioPedido({ onAdd }: FormularioPedidoProps): React.JSX.Element {
+  const [cliente, setCliente] = useState<string>("");
+  const [estado, setEstado] = useState<"pending" | "shipped" | "delivered">("pending");
+  const [productos, setProductos] = useState<Item[]>([]);
+  const [nombreProducto, setNombreProducto] = useState<string>("");
+  const [cantidad, setCantidad] = useState<number>(1);
+  const [precio, setPrecio] = useState<number>(0);
+
+  function agregarProducto(): void {
     if (nombreProducto.length < 1 || cantidad <= 0 || precio <= 0) return;
     setProductos([...productos, {
       productId: Date.now(),
@@ -23,7 +41,7 @@ function FormularioPedido({ onAdd }) {
     setPrecio(0);
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
     // Solo validar cliente y que haya productos
     if (cliente.length < 3 || productos.length === 0) return;
@@ -46,7 +64,7 @@ function FormularioPedido({ onAdd }) {
       <label>Cliente:</label>
       <input type="text" value={cliente} onChange={e => setCliente(e.target.value)} minLength={3} required className="input-cliente" />
       <label>Estado:</label>
-      <select value={estado} onChange={e => setEstado(e.target.value)} className="select-estado">
+      <select value={estado} onChange={e => setEstado(e.target.value as "pending" | "shipped" | "delivered")} className="select-estado">
         <option value="pending">Pendiente</option>
         <option value="shipped">Enviado</option>
         <option value="delivered">Entregado</option>
@@ -69,9 +87,5 @@ function FormularioPedido({ onAdd }) {
     </form>
   );
 }
-
-FormularioPedido.propTypes = {
-  onAdd: PropTypes.func.isRequired,
-};
 
 export default FormularioPedido;
