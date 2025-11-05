@@ -5,27 +5,64 @@
   margin-bottom: 18px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 }
+
+.stats-summary {
+  margin-bottom: 32px;
+}
+
 .titulo-estadisticas {
   color: #388e3c;
   margin-bottom: 10px;
 }
+
 .lista-estadisticas {
   list-style: none;
   padding: 0;
   display: flex;
   gap: 24px;
   font-size: 1.05rem;
+  flex-wrap: wrap;
 }
+
 .total-pedidos {
   font-weight: bold;
   color: #1976d2;
 }
+
 .pendientes-pedidos {
-  color: #7c6f00;
+  color: #ff9800;
+  font-weight: 600;
 }
+
 .enviados-pedidos {
-  color: #01579b;
+  color: #2196f3;
+  font-weight: 600;
 }
+
 .entregados-pedidos {
-  color: #1b5e20;
+  color: #4caf50;
+  font-weight: 600;
 }
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.chart-wrapper {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chart-wrapper h4 {
+  color: #1976d2;
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+

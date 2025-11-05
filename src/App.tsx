@@ -78,12 +78,14 @@ function App(): React.JSX.Element {
           </ul>
         </nav>
 
-        <Routes>
-          <Route path="/" element={<Navigate to="/pedidos" replace />} />
-          <Route path="/pedidos" element={<PedidosPage pedidos={pedidos} />} />
-          <Route path="/nuevo-pedido" element={<NuevoPedidoPage onAdd={agregarPedido} />} />
-          <Route path="/estadisticas" element={<EstadisticasPage pedidos={pedidos} />} />
-        </Routes>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Navigate to="/pedidos" replace />} />
+            <Route path="/pedidos" element={<PedidosPage pedidos={pedidos} />} />
+            <Route path="/nuevo-pedido" element={<NuevoPedidoPage onAdd={agregarPedido} />} />
+            <Route path="/estadisticas" element={<EstadisticasPage pedidos={pedidos} />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
